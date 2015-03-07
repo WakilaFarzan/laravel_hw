@@ -21,9 +21,25 @@ class StoreCastRequest extends Request {
 	 */
 	public function rules()
 	{
-		return [
+//        $rules = array(
+//            'voter_id' => 'required|min:13|max:13|unique:voters,voter_id,'.$this->get('voter_id'),
+//        );
+//
+//        $validation = Validator::make(Input::all(), $rules);
+//
+//        if ($validation->fails()) {
+//            echo 'That email address is already registered. You sure you don\'t have an account?';
+//        }
 
-            'voter_id'=>'required',
+
+        return [
+
+            'voter_id' => 'required|min:13|max:13|exists:voters,voter_id|unique:casts,voter_id,'.$this->get('voter_id'),
+
+            'exists' => 'The :attribute does not listed in database.',
+
+            'unique' => 'The :attribute already been registered.',
+
 		];
 	}
 
