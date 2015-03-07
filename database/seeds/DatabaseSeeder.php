@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder {
 //        $this->call('CommentsTableSeeder');
         $this->call('VotersTableSeeder');
         $this->call('CandidatesTableSeeder');
+        $this->call('CastsTableSeeder');
 	}
 
 }

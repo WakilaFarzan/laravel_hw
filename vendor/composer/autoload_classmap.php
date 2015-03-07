@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'BlogsTableSeeder' => $baseDir . '/database/seeds/BlogsTableSeeder.php',
     'CandidatesTableSeeder' => $baseDir . '/database/seeds/CandidatesTableSeeder.php',
+    'CastsTableSeeder' => $baseDir . '/database/seeds/CastsTableSeeder.php',
     'CategoriesTableSeeder' => $baseDir . '/database/seeds/CategoriesTableSeeder.php',
     'CommentsTableSeeder' => $baseDir . '/database/seeds/CommentsTableSeeder.php',
     'CreateBlogsCategoriesAndCommentsTable' => $baseDir . '/database/migrations/2015_03_04_181838_create_blogs_categories_and_comments_table.php',

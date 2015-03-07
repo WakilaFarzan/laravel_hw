@@ -43,7 +43,7 @@ class ProjectsController extends Controller
     public function store(ProjectRequest $request)
     {
 
-        $this->validate($request, $this->rules);
+        //$this->validate($request, $this->rules);
         $input = Input::all();
         Project::create($input);
 

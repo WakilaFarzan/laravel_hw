@@ -26,6 +26,13 @@ class CreateVoterAndCandidateTable extends Migration {
             $table->string('symbol')->default('');
             $table->timestamps();
         });
+
+        Schema::create('casts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('voter_id')->default('');
+            $table->string('symbol')->default('');
+            $table->timestamps();
+        });
 	}
 
 	/**

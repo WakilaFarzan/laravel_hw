@@ -1,15 +1,16 @@
 <?php namespace App\Http\Controllers;
 
+
 use Input;
 use Redirect;
-use App\Candidate;
+use App\Cast;
 use App\Http\Requests;
-use App\Http\Requests\StoreCandidateRequest;
+use App\Http\Requests\StoreCastRequest;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class CandidatesController extends Controller {
+class CastsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -18,7 +19,7 @@ class CandidatesController extends Controller {
 	 */
 	public function index()
 	{
-        return view('candidate.create');
+        return view('cast.create');
 	}
 
 	/**
@@ -36,12 +37,12 @@ class CandidatesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(StoreCandidateRequest $request)
+	public function store(StoreCastRequest $request)
 	{
         $input = Input::all();
-        Candidate::create($input);
+        Cast::create($input);
 
-        return Redirect::route('candidate.index')->with('message', 'Data has been saved successfully');
+        return Redirect::route('cast.index')->with('message', 'You vote is counted successfully');
 	}
 
 	/**

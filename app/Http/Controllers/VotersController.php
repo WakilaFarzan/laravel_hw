@@ -1,11 +1,16 @@
 <?php namespace App\Http\Controllers;
 
+use Input;
+use Redirect;
+use App\Voter;
 use App\Http\Requests;
+use App\Http\Requests\StoreVoterRequest;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
 class VotersController extends Controller {
+
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +19,7 @@ class VotersController extends Controller {
 	 */
 	public function index()
 	{
-		//
+        return view('voter.create');
 	}
 
 	/**
@@ -32,9 +37,12 @@ class VotersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(StoreVoterRequest $request)
 	{
-		//
+        $input = Input::all();
+        Voter::create($input);
+
+        return Redirect::route('voter.index')->with('message', 'Data has been saved successfully');
 	}
 
 	/**

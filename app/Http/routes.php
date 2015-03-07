@@ -105,4 +105,8 @@ Route::post('fileentry/add',[
     'as' => 'addentry', 'uses' => 'FileEntryController@add']);
 
 Route::model('voters', 'Voter');
-Route::resource('voter', 'VoterController');
+Route::model('candidates', 'Candidate');
+Route::model('casts', 'Cast');
+Route::resource('voter', 'VotersController');
+Route::resource('candidate', 'CandidatesController');
+Route::resource('cast', 'CastsController');

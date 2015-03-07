@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Voter extends Model {
+class Cast extends Model {
 
     protected $guarded = [];
 
