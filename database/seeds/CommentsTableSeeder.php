@@ -13,7 +13,7 @@ class CommentsTableSeeder extends Seeder {
         DB::table('comments')->delete();
 
         $comments = array(
-            ['id' => 1,'blog_id' => 1, 'name' => 'Bornaly', 'email' =>'bornaly.cste@yahoo.com','message' => 'Here is a comment of this blog','modified_by' => 'Wakila', 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 1,'blog_id' => 1, 'name' => 'Bornaly', 'email' =>'bornaly.cste@yahoo.com','message' => 'Here is a comment of this blog', 'created_at' => new DateTime, 'updated_at' => new DateTime],
         );
 
         // Uncomment the below to run the seeder

@@ -52,7 +52,7 @@
 			<!-- /.modal -->
 			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 
-			@include('partials-blogitem.breadcrumb')
+			{{--@include('partials-blogitem.breadcrumb')--}}
 
 			<!-- BEGIN PAGE CONTENT INNER -->
 
@@ -92,11 +92,11 @@
 														<a href="javascript:;">
 														{{ $blog->created_at }}</a>
 													</li>
-													<li>
-														<i class="fa fa-comments"></i>
-														<a href="javascript:;">
-														38 Comments </a>
-													</li>
+													{{--<li>--}}
+														{{--<i class="fa fa-comments"></i>--}}
+														{{--<a href="javascript:;">--}}
+														{{--38 Comments </a>--}}
+													{{--</li>--}}
 												</ul>
 											</div>
 										</div>

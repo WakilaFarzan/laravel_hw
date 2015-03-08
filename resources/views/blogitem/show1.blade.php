@@ -50,7 +50,7 @@
 			<!-- /.modal -->
 			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 
-			@include('partials-blogitem.breadcrumb')
+			{{--@include('partials-blogitem.breadcrumb')--}}
 
 			<!-- BEGIN PAGE CONTENT INNER -->
 			<div class="portlet light">
@@ -61,7 +61,7 @@
 								<div class="col-md-9 article-block">
 									<h3 style="margin-top:0;"> {{ $blog->title }}</h3>
 									<div class="blog-tag-data">
-										<img src="/assets/admin/pages/media/gallery/item_img.jpg" class="img-responsive" alt="">
+										{{--<img src="/assets/admin/pages/media/gallery/item_img.jpg" class="img-responsive" alt="">--}}
 										<div class="row">
 											<div class="col-md-6">
 												<ul class="list-inline blog-tags">
@@ -79,11 +79,11 @@
 														<a href="javascript:;">
 														{{ $blog->created_at }}</a>
 													</li>
-													<li>
-														<i class="fa fa-comments"></i>
-														<a href="javascript:;">
-														38 Comments </a>
-													</li>
+													{{--<li>--}}
+														{{--<i class="fa fa-comments"></i>--}}
+														{{--<a href="javascript:;">--}}
+														{{--38 Comments </a>--}}
+													{{--</li>--}}
 												</ul>
 											</div>
 										</div>
@@ -92,7 +92,23 @@
 									<div>
 										{{ $blog->description }}
 									</div>
+									<div>
+									            <p align="right">
+
+                                                        {!! link_to_route('categories.blogs.edit', 'Edit Blog', array($category->id, $blog->id), array('class' => 'btn btn-info')) !!}
+                                                </p>
+									</div>
 									<hr>
+
+										<div>
+                                    			 <p>
+                                                              {!! link_to_route('categories.index', 'Back to Category') !!}
+
+                                                          </p>
+
+                                                          <p>  {!! link_to_route('categories.blogs.create', 'Create Blog',$category->id) !!}</p>
+
+                                    			</div>
 									{{--<div class="media">--}}
 										{{--<h3>Comments</h3>--}}
 										{{--<a href="javascript:;" class="pull-left">--}}
@@ -175,11 +191,12 @@
 									@endforeach
 									<!--end media-->
 									<hr>
+									<h3>Leave a Comment</h3>
 									<div class="post-comment">
 
 									{{--@include('blogitem.partials.comment')--}}
 
-									 {!! Form::model(new App\Comment, ['route' => ['blogs.comments.store',$blog->id], 'class'=>''])!!}
+									    {!! Form::model(new App\Comment, ['route' => ['blogs.comments.store',$blog->id], 'class'=>''])!!}
                                             @include('blogitem.partials.create_comment', ['submit_text' => 'Post a Comment'])
                                         {!! Form::close() !!}
 

@@ -18,7 +18,6 @@ class CreateBlogsCategoriesAndCommentsTable extends Migration {
             $table->string('title')->default('');
             $table->text('description')->default('');
             $table->string('created_by')->default('');
-            $table->string('modified_by')->default('');
             $table->timestamps();
         });
 
@@ -30,9 +29,7 @@ class CreateBlogsCategoriesAndCommentsTable extends Migration {
             $table->string('title')->default('');
             $table->text('description')->default('');
             $table->string('tag')->default('');
-            $table->boolean('status')->default(true);
-            $table->string('created_by')->default('');
-            $table->string('modified_by')->default('');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
 
@@ -44,7 +41,6 @@ class CreateBlogsCategoriesAndCommentsTable extends Migration {
             $table->string('name')->default('');
             $table->string('email')->default('');
             $table->text('message')->default('');
-            $table->string('modified_by')->default('');
             $table->timestamps();
         });
     }

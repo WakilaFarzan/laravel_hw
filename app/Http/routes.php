@@ -98,11 +98,11 @@ Route::resource('categories', 'CategoryController');
 Route::resource('categories.blogs', 'BlogsController');
 Route::resource('blogs.comments', 'CommentsController');
 
-Route::get('fileentry', 'FileEntryController@index');
-Route::get('fileentry/get/{filename}', [
-    'as' => 'getentry', 'uses' => 'FileEntryController@get']);
-Route::post('fileentry/add',[
-    'as' => 'addentry', 'uses' => 'FileEntryController@add']);
+//Route::get('fileentry', 'FileEntryController@index');
+//Route::get('fileentry/get/{filename}', [
+//    'as' => 'getentry', 'uses' => 'FileEntryController@get']);
+//Route::post('fileentry/add',[
+//    'as' => 'addentry', 'uses' => 'FileEntryController@add']);
 
 Route::model('voters', 'Voter');
 Route::model('candidates', 'Candidate');

@@ -3,6 +3,7 @@
 use Input;
 use Redirect;
 use App\Http\Requests;
+use App\Http\Requests\StoreCommentRequest;
 use App\Http\Controllers\Controller;
 use App\Comment;
 use App\Category;
@@ -36,13 +37,13 @@ class CommentsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Category $category, Blog $blog)
+	public function store(StoreCommentRequest $request,Category $category, Blog $blog)
 	{
         $input = Input::all();
         $input['blog_id'] = $blog->id;
         Comment::create( $input );
 
-        return Redirect::route('categories.show',[$blog->id, $category->id])->with('Comment submitted.');
+        return Redirect::route('categories.show',[$category->id, $blog->id])->with('message','Comment submitted.');
 	}
 
 	/**
@@ -73,12 +74,12 @@ class CommentsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Blog $blog, Comment $comment, Category $category)
+	public function update(StoreCommentRequest $request,Blog $blog, Comment $comment, Category $category)
 	{
         $input = array_except(Input::all(), '_method');
         $comment->update($input);
 
-        return Redirect::route('categories.show', [$blog->id, $category->id])->with('message', 'comment updated.');
+        return Redirect::route('categories.index', [$blog->id, $category->id])->with('message', 'comment updated.');
 	}
 
 	/**
@@ -91,7 +92,7 @@ class CommentsController extends Controller {
 	{
         $comment->delete();
 
-        return Redirect::route('categories.show',[$blog->id, $category->id])->with('message', 'comment deleted.');
+        return Redirect::route('categories.index',[$blog->id, $category->id])->with('message', 'comment deleted.');
 	}
 
 }

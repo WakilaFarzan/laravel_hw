@@ -6,7 +6,7 @@
 		<div class="container-fluid">
 			<!-- BEGIN LOGO -->
 			<div class="page-logo">
-				<a href="index.html"><img src="/assets/admin/layout3/img/logo-default.png" alt="logo" class="logo-default"></a>
+				<a href="#"><h1 style="font-family: font-awesome;color:crimson"><i>Journal System</i></h1></a>
 			</div>
 			<!-- END LOGO -->
 			<!-- BEGIN RESPONSIVE MENU TOGGLER -->

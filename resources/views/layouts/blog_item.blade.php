@@ -19,7 +19,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | Blog Post</title>
+<title>Journal System | Blog</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -54,9 +54,18 @@ License: You must have a valid license purchased only from themeforest(the above
 @include('partials-blogitem.header')
 
 	@if (Session::has('message'))
-	<div class="flash alert-info">
-	<p>{{ Session::get('message') }}</p>
-	</div>	@endif
+    	<div class="flash alert-info">
+    	<h1>{{ Session::get('message') }}</h1>
+    	</div>
+    	@endif
+
+    		@if ($errors->any())
+    		<div class='flash alert-danger'>
+    		@foreach ( $errors->all() as $error )
+    		<h3>{{ $error }}</h3>
+    		@endforeach
+    		</div>
+    		@endif
 
 @yield('content')
 

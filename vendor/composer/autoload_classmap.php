@@ -16,7 +16,7 @@ return array(
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateProjectsAndTasksTables' => $baseDir . '/database/migrations/2015_02_19_061615_create_projects_and_tasks_tables.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
-    'CreateVoterAndCandidateTable' => $baseDir . '/database/migrations/2015_03_07_100548_create_voter_and_Candidate_table.php',
+    'CreateVotersCastsCandidatesTable' => $baseDir . '/database/migrations/2015_03_08_054905_create_voters_casts_candidates_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Facade.php',

@@ -3,6 +3,7 @@
 use Input;
 use Redirect;
 use App\Http\Requests;
+use App\Http\Requests\StoreCategoriesRequest;
 use App\Http\Controllers\Controller;
 use App\Category;
 use App\Blog;
@@ -37,7 +38,7 @@ class CategoryController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(StoreCategoriesRequest $request)
 	{
         $input = Input::all();
         Category::create($input);
@@ -75,7 +76,7 @@ class CategoryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Category $category)
+	public function update(StoreCategoriesRequest $request,Category $category)
 	{
         $input = array_except(Input::all(), '_method');
         $category->update($input);

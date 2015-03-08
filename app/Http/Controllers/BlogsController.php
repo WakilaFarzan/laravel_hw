@@ -37,7 +37,7 @@ class BlogsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(StoreBlogRequest $request)
+	public function store(StoreBlogRequest $request, Category $category)
 	{
         $input = Input::all();
         $input['category_id'] = $category->id;
@@ -74,7 +74,7 @@ class BlogsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Category $category, Blog $blog)
+	public function update(StoreBlogRequest $request,Category $category, Blog $blog)
 	{
         $input = array_except(Input::all(), '_method');
         $blog->update($input);

@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class StoreBlogRequest extends Request {
+class StoreCommentRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -22,11 +22,8 @@ class StoreBlogRequest extends Request {
 	public function rules()
 	{
 		return [
-
-            'title' => 'required|min:10|max:50',
-           'category_id' => 'required',
-            'description' => 'required',
-            'tag' => 'required',
+            'name' => 'required|min:4|max:10',
+            'email' => 'required',
 		];
 	}
 
