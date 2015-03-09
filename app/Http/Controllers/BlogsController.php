@@ -2,6 +2,7 @@
 
 use Input;
 use Redirect;
+use DB;
 use App\Http\Requests;
 use App\Http\Requests\StoreBlogRequest;
 use App\Http\Controllers\Controller;
@@ -54,7 +55,8 @@ class BlogsController extends Controller {
 	 */
 	public function show(Category $category, Blog $blog,Comment $comment)
 	{
-         return view('blogitem.show1', compact('category', 'blog','comment'));
+//        DB::table('blogs')->where('status', '=', 1)->get();
+        return view('blogitem.show1', compact('category', 'blog','comment'));
 	}
 
 	/**

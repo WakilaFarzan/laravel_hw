@@ -43,7 +43,8 @@ class CommentsController extends Controller {
         $input['blog_id'] = $blog->id;
         Comment::create( $input );
 
-        return Redirect::route('categories.show',[$category->id, $blog->id])->with('message','Comment submitted.');
+//        return Redirect::route('categories.show',[$category->id, $blog->id])->with('message','Comment submitted.');
+        return Redirect::back()->with('message','Comment submitted.');
 	}
 
 	/**
@@ -79,7 +80,9 @@ class CommentsController extends Controller {
         $input = array_except(Input::all(), '_method');
         $comment->update($input);
 
-        return Redirect::route('categories.index', [$blog->id, $category->id])->with('message', 'comment updated.');
+//        return Redirect::route('categories.index', [$blog->id, $category->id])->with('message', 'comment updated.');
+
+        return Redirect::back()->with('message','Comment updated');
 	}
 
 	/**
@@ -92,7 +95,8 @@ class CommentsController extends Controller {
 	{
         $comment->delete();
 
-        return Redirect::route('categories.index',[$blog->id, $category->id])->with('message', 'comment deleted.');
+//        return Redirect::route('categories.index',[$blog->id, $category->id])->with('message', 'comment deleted.');
+        return Redirect::back()->with('message','Comment deleted');
 	}
 
 }

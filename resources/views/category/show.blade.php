@@ -61,8 +61,9 @@
 
 				 @if ( !$category->blogs->count() )
                         Your categories has no blogs.
-                    @else
+                 @else
 				@foreach( $category->blogs as $blog )
+				{{--@foreach( $category->blogs as $blog->where('status','=',1) )--}}
 				{{--@foreach($blogs as $blog)--}}
 					<div class="row">
 						<div class="col-md-12 blog-page">

@@ -29,8 +29,6 @@ class CreateVotersCastsCandidatesTable extends Migration {
         });
         Schema::create('casts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('symbols')->unsigned()->default(0);
-            $table->foreign('symbols')->references('symbol')->on('candidates')->onDelete('cascade');
             $table->string('voter_id')->default('');
             $table->string('symbol')->default('');
             $table->timestamps();

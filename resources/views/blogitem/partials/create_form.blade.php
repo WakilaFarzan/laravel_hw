@@ -30,7 +30,7 @@
 
 <div class="form-group">
     {!! Form::label('description', 'Description:') !!}
-    {!! Form::textarea('description',null,array('class' => "ckeditor form-control",'data-error-container'=>'#editor2_error')) !!}
+    {!! Form::textarea('description',null,array('class' => "ckeditor form-control",'data-error-container'=>"#editor2_error")) !!}
 
 </div>
 

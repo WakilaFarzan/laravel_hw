@@ -2,6 +2,7 @@
 
 use Input;
 use Redirect;
+use DB;
 use App\Http\Requests;
 use App\Http\Requests\StoreCategoriesRequest;
 use App\Http\Controllers\Controller;
@@ -56,7 +57,13 @@ class CategoryController extends Controller {
 	{
         //return view('category.show', compact('category'));
 
+        //$category = DB::table('blogs')->where('status', '=', 1)->get();
+        //$category = Blog::
+        //dd($category->blogs()->where('status',1));
+        //$category = $category->blogs->where('status',1);
+
         return view('category.show', compact('category'));
+
 	}
 
 	/**
